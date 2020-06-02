@@ -5,8 +5,8 @@ uint16 track_id                             # The track ID of the object generat
 
                                             # NB: The z component of these fields is ignored for 2D tracking.
 geometry_msgs/Point position                # x, y, z coordinates of the centroid of the object being tracked.
-geometry_msgs/Vector3 velocity              # The velocity of the object in each spacial dimension.
-geometry_msgs/Vector3 acceleration          # The acceleration of the object in each spacial dimension.
+geometry_msgs/Vector3 velocity              # The velocity of the object in each spatial dimension.
+geometry_msgs/Vector3 acceleration          # The acceleration of the object in each spatial dimension.
 geometry_msgs/Vector3 size                  # The average deviation (m) in the x, y, z, dimensions
                                             #   between the center of the object and the data points which it is derived from.
 string classification                       # An optional classification of the object (eg. Person, Car).
