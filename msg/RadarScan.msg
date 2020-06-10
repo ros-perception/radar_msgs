@@ -1,3 +1,3 @@
 std_msgs/Header header
 
-radar_msgs/RadarReturn[] points
+radar_msgs/RadarReturn[] returns
