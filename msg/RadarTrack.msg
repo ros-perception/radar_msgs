@@ -9,4 +9,5 @@ geometry_msgs/Vector3 velocity              # The velocity of the object in each
 geometry_msgs/Vector3 acceleration          # The acceleration of the object in each spatial dimension.
 geometry_msgs/Vector3 size                  # The average deviation (m) in the x, y, z, dimensions
                                             #   between the center of the object and the data points which it is derived from.
-string classification                       # An optional classification of the object (eg. Person, Car).
+uint8 classification                        # An optional classification of the object. 0 = Static Object, 1 = Dynamic object
+                                            #   Additional vendor-specific classifications are permitted (eg. 2 = Car).
