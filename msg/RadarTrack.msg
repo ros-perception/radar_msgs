@@ -7,7 +7,6 @@ uuid_msgs/UniqueID uuid                     # A unique ID of the object generate
 geometry_msgs/Point position                # x, y, z coordinates of the centroid of the object being tracked.
 geometry_msgs/Vector3 velocity              # The velocity of the object in each spatial dimension.
 geometry_msgs/Vector3 acceleration          # The acceleration of the object in each spatial dimension.
-geometry_msgs/Vector3 size                  # The radius of the object in each spatial dimension which
-                                            #   will allow the object to be represented as an ovoid.
+geometry_msgs/Vector3 size                  # The object size (m) in the x, y, z, dimensions (eg Radius of half-width/length/height)
 uint8 classification                        # An optional classification of the object. 0 = Static Object, 1 = Dynamic object
                                             #   Additional vendor-specific classifications are permitted (eg. 2 = Car).
