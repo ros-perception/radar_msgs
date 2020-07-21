@@ -10,3 +10,8 @@ geometry_msgs/Vector3 acceleration          # The acceleration of the object in 
 geometry_msgs/Vector3 size                  # The object size (m) in the x, y, z, dimensions (eg Radius of half-width/length/height)
 uint8 classification                        # An optional classification of the object. 0 = Static Object, 1 = Dynamic object
                                             #   Additional vendor-specific classifications are permitted (eg. 2 = Car).
+float32[144] covariance                     # Row-major representation of the 12x12 covariance matrix. In order, the parameters are:
+                                            #   x-position, y-position, z-position,
+                                            #   x-velocity, y-velocity, z-velocity,
+                                            #   x-acceleration, y-acceleration, z-acceleration,
+                                            #   x-size, y-size, z-size
