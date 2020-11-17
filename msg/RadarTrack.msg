@@ -7,9 +7,9 @@ uuid_msgs/UniqueID uuid                     # A unique ID of the object generate
 geometry_msgs/Point position                # x, y, z coordinates of the centroid of the object being tracked.
 geometry_msgs/Vector3 velocity              # The velocity of the object in each spatial dimension.
 geometry_msgs/Vector3 acceleration          # The acceleration of the object in each spatial dimension.
-geometry_msgs/Vector3 size                  # The object size (m) in the x, y, z, dimensions (eg Radius of half-width/length/height)
-uint8 classification                        # An optional classification of the object. 0 = Static Object, 1 = Dynamic object
-                                            #   Additional vendor-specific classifications are permitted (eg. 2 = Car).
+geometry_msgs/Vector3 size                  # The object size as represented by the radar sensor eg. length, width, height OR the diameter of an ellipsoid in the x, y, z, dimensions
+uint8 classification                        # An optional classification of the object. 0 = No Classification, 1 = Static Object, 2 = Dynamic object
+                                            #   Additional vendor-specific classifications are permitted (eg. 3 = Car).
 float64[9] position_covariance              # Row-major about the x, y, z axes
 float64[9] velocity_covariance              # Row-major about the x, y, z axes
 float64[9] acceleration_covariance          # Row-major about the x, y, z axes
