@@ -8,6 +8,7 @@ geometry_msgs/Point position                # x, y, z coordinates of the centroi
 geometry_msgs/Vector3 velocity              # The velocity of the object in each spatial dimension.
 geometry_msgs/Vector3 acceleration          # The acceleration of the object in each spatial dimension.
 geometry_msgs/Vector3 size                  # The object size as represented by the radar sensor eg. length, width, height OR the diameter of an ellipsoid in the x, y, z, dimensions
+                                            # and is from the sensor frame's view.
 uint8 classification                        # An optional classification of the object. 0 = No Classification, 1 = Static Object, 2 = Dynamic object
                                             #   Additional vendor-specific classifications are permitted (eg. 3 = Car).
 float64[9] position_covariance              # Row-major about the x, y, z axes
