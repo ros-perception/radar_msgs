@@ -1,3 +1,4 @@
+# This message relates only to FMCW radar.  
 # All variables below are relative to the radar's frame of reference.
 # This message is not meant to be used alone but as part of a stamped or array message.
 
