@@ -9,7 +9,9 @@ find_package(std_msgs REQUIRED)
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/RadarReturn.msg"
   "msg/RadarScan.msg"
-  DEPENDENCIES builtin_interfaces std_msgs
+  "msg/RadarTrack.msg"
+  "msg/RadarTracks.msg"
+  DEPENDENCIES builtin_interfaces std_msgs uuid_msgs geometry_msgs
 )
 
 ament_export_dependencies(rosidl_default_runtime)
