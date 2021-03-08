@@ -1,27 +1,28 @@
 version: 2
 jobs:
-  foxy:
+  noetic:
     docker:
-      - image: ros:foxy
+      - image: ros:noetic
     steps:
       - checkout
       - run:
           name: Set Up Container
           command: |
-            apt update -qq && apt install -y build-essential cmake python3-colcon-common-extensions python3-rosdep python3-pip
-            pip3 install --upgrade pytest
+            apt update -qq && apt install -y build-essential cmake python3-rosdep python3-catkin-tools python3-osrf-pycommon
             apt upgrade -y
-            source `find /opt/ros -maxdepth 2 -name local_setup.bash | sort | head -1`
+            source /opt/ros/*/setup.bash
             mkdir -p src/radar_msgs && mv `find -maxdepth 1 -not -name . -not -name src` src/radar_msgs/
             rosdep update
             rosdep install -y --ignore-src --from-paths src
+            catkin init
       - run:
           name: Build
           command: |
-            source `find /opt/ros -maxdepth 2 -name local_setup.bash | sort | head -1`
-            colcon build --parallel-workers 1
+            source /opt/ros/*/setup.bash
+            ls src/radar_msgs
+            catkin build
 workflows:
   version: 2
   ros_build:
     jobs:
-      - foxy
+      - noetic
