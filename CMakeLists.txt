@@ -1,19 +1,16 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.0.2)
 project(radar_msgs)
 
-find_package(ament_cmake REQUIRED)
-find_package(builtin_interfaces REQUIRED)
-find_package(rosidl_default_generators REQUIRED)
-find_package(std_msgs REQUIRED)
-
-rosidl_generate_interfaces(${PROJECT_NAME}
-  "msg/RadarReturn.msg"
-  "msg/RadarScan.msg"
-  "msg/RadarTrack.msg"
-  "msg/RadarTracks.msg"
-  DEPENDENCIES builtin_interfaces std_msgs uuid_msgs geometry_msgs
+set(ROSPKG_DEPS
+  "std_msgs"
+  "uuid_msgs"
+  "geometry_msgs"
 )
 
-ament_export_dependencies(rosidl_default_runtime)
+find_package(catkin REQUIRED COMPONENTS message_generation ${ROSPKG_DEPS})
 
-ament_package()
+add_message_files(DIRECTORY msg)
+
+generate_messages(DEPENDENCIES ${ROSPKG_DEPS})
+
+catkin_package(CATKIN_DEPENDS message_runtime ${ROSPKG_DEPS})
