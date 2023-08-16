@@ -7,4 +7,4 @@ float32 azimuth                          # Angle (in radians) in the azimuth pla
 float32 elevation                        # Angle (in radians) in the elevation plane between the sensor and the detected return.
                                          # Negative angles are below the sensor. For 2D radar, this will be 0.
 float32 doppler_velocity                 # The doppler speed (m/s) of the return.
-float32 amplitude                        # The amplitude of the return (dB).
+float32 amplitude                        # The radar cross section of the return (RCS linear/m^2).
