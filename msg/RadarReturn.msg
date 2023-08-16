@@ -1,6 +1,8 @@
 # All variables below are relative to the radar's frame of reference.
 # This message is not meant to be used alone but as part of a stamped or array message.
 
+builtin_interfaces/Duration stamp_offset # Offset to the stamp in the RadarScan message.
+                                         # If the offset is unknown it should be set to 0.
 float32 range                            # Distance (m) from the sensor to the detected return.
 # The angles order of the angles are elevation-over-azimuth
 float32 azimuth                          # Angle (in radians) in the azimuth plane between the sensor and the detected return.
